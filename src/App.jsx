@@ -1,9 +1,11 @@
+import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "./layout/Main";
 import About from "./pages/About";
 import Cart from "./pages/Cart";
 import Home from "./pages/Home";
 import TopRated from "./pages/TopRated";
+import store from "./redux/store";
 
 // React Router Setup
 const router = createBrowserRouter([
@@ -38,7 +40,9 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <div style={{ padding: "40px 100px" }}>
-        <RouterProvider router={router}></RouterProvider>
+      <Provider store={store}>
+          <RouterProvider router={router}></RouterProvider>
+      </Provider>
     </div>
   );
 };
