@@ -1,7 +1,12 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/actionCreators/productActions";
+import { ADD_TO_CART } from "../redux/actionTypes/actionTypes";
 
 const ProductCard = ({ product }) => {
   const { image, model, spec } = product;
+
+  const dispatch = useDispatch();
   return (
     <div
       style={{
@@ -14,7 +19,20 @@ const ProductCard = ({ product }) => {
       <div>
         <img style={{ width: "100%" }} src={image} alt="" />
         <h2 style={{ textAlign: "center" }}>{model}</h2>
-        <button style={{width: "100%", borderRadius: "10px", background: "black", color: "white", padding: "16px 16px", cursor: "pointer", marginTop: "10px"}}>Add To Cart</button>
+        <button
+          onClick={() => dispatch(addToCart(product))}
+          style={{
+            width: "100%",
+            borderRadius: "10px",
+            background: "black",
+            color: "white",
+            padding: "16px 16px",
+            cursor: "pointer",
+            marginTop: "10px",
+          }}
+        >
+          Add To Cart
+        </button>
       </div>
     </div>
   );

@@ -19,4 +19,12 @@ Store Initialize reducer conected
 ---------------------------------
 Step 01: Store Initialize (createStore())
 Step 02: Store Wrap App.js (Provider)
-Step 03: Redux conected React |App
+Step 03: Redux conected React App reducer logic
+
+
+Reducer Business logic (Switch)
+----------------------
+Step 01: 
+
+
+
